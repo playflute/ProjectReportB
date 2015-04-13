@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css"> 
+    #tbList
+    {
+        border:1px solid #0094ff;
+        width:800px;
+        margin:10px auto;
+        border-collapse:collapse;
+        
+        }
+        #tbList th,td
+        {
+            border:1px solid #0094ff;
+            padding:5px;
+            }
+    </style>
+    <script type="text/javascript">
+        function doDel(timestamp) {
+            if (confirm("Are you sure to delete?")) {
+                window.location = "Delete.ashx?timestamp=" + timestamp;
+            }
+        }
+    </script>
+</head>
+<body>
+<table id="tbList">
+<tr>
+<td>TimeStamp</td>
+<td>Item1</td>
+<td>Item2</td>
+<td>Operations</td>
+</tr>
+{@new_row}
+</table>
+
+</body>
+</html>

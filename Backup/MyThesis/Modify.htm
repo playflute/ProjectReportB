@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css">
+    #Activity_list
+    {
+        border:1px solid #0094ff;
+        width:300px;
+        margin:10px auto;
+        border-collapse:collapse;
+        }
+        #Activity_list th,td
+        {
+            border:1px solid #0094ff;
+            padding:5px;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+
+            document.getElementById("btnSure").onclick = function () {
+                document.getElementById("activityList").submit();
+            };
+        };
+    </script>
+</head>
+<body>
+<form id="activityList" action="Modify.ashx" method="post">
+<input type="hidden" name="txtId"" value="{@txtId}" />
+<table id="Activity_List">
+    <tr>
+        <td>Timestamp</td>
+        <td><input type="text" name="timestamp" id="txt_time" value="{@txt_timestamp}" /></td>
+    </tr>
+        <tr>
+        <td>Activity_Name</td>
+        <td><input type="text" name="activity_name" id="txt_activity" value="{@txt_activity}" /></td>
+    </tr>
+       
+    <tr>
+        <td>Duration</td>
+        <td><input type="text" name="duration" id="txt_duration" value="{@txt_duration}" /></td>
+    </tr>
+    <tr>
+        <td colspan="2">
+        <input type="button" value="Change" id="btnSure" />
+        <a href="MainFormPage.ashx">BackHome</a>
+    </td>
+    </tr>
+</table>
+</form>
+
+</body>
+</html>

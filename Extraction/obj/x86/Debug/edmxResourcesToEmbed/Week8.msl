@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Week8StoreContainer" CdmEntityContainer="Week8Container">
+    <EntitySetMapping Name="EmbeddedSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Week8.Embedded)">
+        <MappingFragment StoreEntitySet="EmbeddedSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Item1" ColumnName="Item1" />
+          <ScalarProperty Name="Item2" ColumnName="Item2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DurationSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Week8.Duration)">
+        <MappingFragment StoreEntitySet="DurationSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Activity_id" ColumnName="Activity_id" />
+          <ScalarProperty Name="Activity_duration" ColumnName="Activity_duration" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Activity_CountSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Week8.Activity_Count)">
+        <MappingFragment StoreEntitySet="Activity_CountSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Activity_id" ColumnName="Activity_id" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TripletsSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Week8.Triplets)">
+        <MappingFragment StoreEntitySet="TripletsSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Verb" ColumnName="Verb" />
+          <ScalarProperty Name="Object" ColumnName="Object" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

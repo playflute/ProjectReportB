@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Week8" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+  <EntityContainer Name="Week8Container" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="EmbeddedSet" EntityType="Week8.Embedded" />
+    <EntitySet Name="DurationSet" EntityType="Week8.Duration" />
+    <EntitySet Name="Activity_CountSet" EntityType="Week8.Activity_Count" />
+    <EntitySet Name="TripletsSet" EntityType="Week8.Triplets" />
+  </EntityContainer>
+  <EntityType Name="Embedded">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="TimeStamp" Nullable="false" />
+    <Property Type="String" Name="Item1" Nullable="false" />
+    <Property Type="String" Name="Item2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Duration">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="TimeStamp" Nullable="false" />
+    <Property Type="String" Name="Activity_id" Nullable="false" />
+    <Property Type="String" Name="Activity_duration" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Activity_Count">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Activity_id" Nullable="false" />
+    <Property Type="Int32" Name="Number" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Triplets">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="TimeStamp" Nullable="false" />
+    <Property Type="String" Name="Subject" Nullable="false" />
+    <Property Type="String" Name="Verb" Nullable="false" />
+    <Property Type="String" Name="Object" Nullable="false" />
+  </EntityType>
+</Schema>

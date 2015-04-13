@@ -1,0 +1,416 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0971164C-6511-48B8-B348-CC1737BF36C9}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MyThesis</RootNamespace>
+    <AssemblyName>MyThesis</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Facebook">
+      <HintPath>..\packages\Facebook.6.8.0\lib\net45\Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.WebSockets">
+      <HintPath>..\packages\Microsoft.WebSockets.0.2.3\lib\net45\Microsoft.WebSockets.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="aaaaaaaaaa.aspx" />
+    <Content Include="ActivityNumberSelectable.aspx" />
+    <Content Include="ActivityOverTime.aspx" />
+    <Content Include="Activity_Percentage.aspx" />
+    <Content Include="CRUD.html" />
+    <Content Include="CSS\bootstrap-select.min.css" />
+    <Content Include="CSS\bootstrap-theme.min.css" />
+    <Content Include="CSS\bootstrap.min.css" />
+    <Content Include="CSS\easyui.css" />
+    <Content Include="CSS\font-awesome.min.css" />
+    <Content Include="CSS\icon.css" />
+    <Content Include="CSS\icons\back.png" />
+    <Content Include="CSS\icons\blank.gif" />
+    <Content Include="CSS\icons\cancel.png" />
+    <Content Include="CSS\icons\clear.png" />
+    <Content Include="CSS\icons\cut.png" />
+    <Content Include="CSS\icons\edit_add.png" />
+    <Content Include="CSS\icons\edit_remove.png" />
+    <Content Include="CSS\icons\filesave.png" />
+    <Content Include="CSS\icons\filter.png" />
+    <Content Include="CSS\icons\help.png" />
+    <Content Include="CSS\icons\large_chart.png" />
+    <Content Include="CSS\icons\large_clipart.png" />
+    <Content Include="CSS\icons\large_picture.png" />
+    <Content Include="CSS\icons\large_shapes.png" />
+    <Content Include="CSS\icons\large_smartart.png" />
+    <Content Include="CSS\icons\lock.png" />
+    <Content Include="CSS\icons\man.png" />
+    <Content Include="CSS\icons\mini_add.png" />
+    <Content Include="CSS\icons\mini_edit.png" />
+    <Content Include="CSS\icons\mini_refresh.png" />
+    <Content Include="CSS\icons\more.png" />
+    <Content Include="CSS\icons\no.png" />
+    <Content Include="CSS\icons\ok.png" />
+    <Content Include="CSS\icons\pencil.png" />
+    <Content Include="CSS\icons\print.png" />
+    <Content Include="CSS\icons\redo.png" />
+    <Content Include="CSS\icons\reload.png" />
+    <Content Include="CSS\icons\search.png" />
+    <Content Include="CSS\icons\sum.png" />
+    <Content Include="CSS\icons\tip.png" />
+    <Content Include="CSS\icons\undo.png" />
+    <Content Include="CSS\images\accordion_arrows.png" />
+    <Content Include="CSS\images\blank.gif" />
+    <Content Include="CSS\images\calendar_arrows.png" />
+    <Content Include="CSS\images\combo_arrow.png" />
+    <Content Include="CSS\images\datagrid_icons.png" />
+    <Content Include="CSS\images\datebox_arrow.png" />
+    <Content Include="CSS\images\layout_arrows.png" />
+    <Content Include="CSS\images\linkbutton_bg.png" />
+    <Content Include="CSS\images\loading.gif" />
+    <Content Include="CSS\images\menu_arrows.png" />
+    <Content Include="CSS\images\messager_icons.png" />
+    <Content Include="CSS\images\pagination_icons.png" />
+    <Content Include="CSS\images\panel_tools.png" />
+    <Content Include="CSS\images\searchbox_button.png" />
+    <Content Include="CSS\images\slider_handle.png" />
+    <Content Include="CSS\images\spinner_arrows.png" />
+    <Content Include="CSS\images\tabs_icons.png" />
+    <Content Include="CSS\images\tree_icons.png" />
+    <Content Include="CSS\images\ui-bg_diagonals-thick_15_0b3e6f_40x40.png" />
+    <Content Include="CSS\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="CSS\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="CSS\images\ui-bg_dots-medium_30_0b58a2_4x4.png" />
+    <Content Include="CSS\images\ui-bg_dots-small_20_333333_2x2.png" />
+    <Content Include="CSS\images\ui-bg_dots-small_30_a32d00_2x2.png" />
+    <Content Include="CSS\images\ui-bg_dots-small_40_00498f_2x2.png" />
+    <Content Include="CSS\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="CSS\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="CSS\images\ui-bg_flat_40_292929_40x100.png" />
+    <Content Include="CSS\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="CSS\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="CSS\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="CSS\images\ui-bg_gloss-wave_20_111111_500x100.png" />
+    <Content Include="CSS\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="CSS\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="CSS\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="CSS\images\ui-icons_00498f_256x240.png" />
+    <Content Include="CSS\images\ui-icons_222222_256x240.png" />
+    <Content Include="CSS\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="CSS\images\ui-icons_98d2fb_256x240.png" />
+    <Content Include="CSS\images\ui-icons_9ccdfc_256x240.png" />
+    <Content Include="CSS\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="CSS\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="CSS\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="CSS\images\validatebox_warning.png" />
+    <Content Include="CSS\social-buttons.css" />
+    <Content Include="CSS\template_style.css" />
+    <Content Include="duration.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="images\1.jpg" />
+    <Content Include="images\2.jpg" />
+    <Content Include="images\3.jpg" />
+    <Content Include="images\4.jpg" />
+    <Content Include="images\5.jpg" />
+    <Content Include="images\6.jpg" />
+    <Content Include="images\7.jpg" />
+    <Content Include="images\fancy_deboss.png" />
+    <Content Include="images\loader.gif" />
+    <Content Include="images\nav.png" />
+    <Content Include="images\options.png" />
+    <Content Include="images\qzonebg.gif" />
+    <Content Include="images\shadow.png" />
+    <Content Include="images\Tapestry.jpg" />
+    <Content Include="images\templatemo-bg-1.jpg" />
+    <Content Include="Javascript\bootstrap-select.min.js" />
+    <Content Include="Javascript\bootstrap.min.js" />
+    <Content Include="Javascript\google_js_api.js" />
+    <Content Include="Javascript\jquery-2.1.3.min.js" />
+    <Content Include="Javascript\jquery.easyui.min.js" />
+    <Content Include="Javascript\jsrender.min.js" />
+    <Content Include="Javascript\msgBox.js" />
+    <Content Include="Login.html" />
+    <Content Include="MainFormPage.htm" />
+    <Content Include="Modify.htm" />
+    <Content Include="Registration.html" />
+    <Content Include="TestOnly\.gitignore" />
+    <Content Include="TestOnly\favicon.ico" />
+    <Content Include="TestOnly\favicon.png" />
+    <Content Include="TestOnly\index.html" />
+    <Content Include="TestOnly\js\cookies.js" />
+    <Content Include="TestOnly\js\ghcs.js" />
+    <Content Include="TestOnly\js\github.js" />
+    <Content Include="TestOnly\js\jsonp.js" />
+    <Content Include="TestOnly\js\langhg.js" />
+    <Content Include="TestOnly\js\main.js" />
+    <Content Include="TestOnly\js\md5.js" />
+    <Content Include="TestOnly\js\repo.js" />
+    <Content Include="TestOnly\js\show.js" />
+    <Content Include="TestOnly\js\stat.js" />
+    <Content Include="TestOnly\js\usercommit.js" />
+    <Content Include="TestOnly\js\vis.js" />
+    <Content Include="TestOnly\LICENSE.txt" />
+    <Content Include="TestOnly\resource\default.png" />
+    <Content Include="TestOnly\resource\forkme.png" />
+    <Content Include="TestOnly\resource\github_webfont.svg" />
+    <Content Include="TestOnly\resource\octocat-spinner-128.gif" />
+    <Content Include="TestOnly\resource\particle.png" />
+    <Content Include="TestOnly\resource\preloader24.gif" />
+    <Content Include="TestOnly\resource\ss_bootstrap.png" />
+    <Content Include="TestOnly\resource\ss_d3.gif" />
+    <Content Include="TestOnly\resource\ss_d3.png" />
+    <Content Include="TestOnly\resource\ss_jquery.png" />
+    <Content Include="TestOnly\resource\ss_mc.png" />
+    <Content Include="TestOnly\resource\ss_rails.png" />
+    <Content Include="TestOnly\resource\ss_song-of-github.png" />
+    <Content Include="TestOnly\resource\thumbnail.png" />
+    <Content Include="TestOnly\style.css" />
+    <Content Include="TestOnly\tree.js" />
+    <Content Include="TestSocket.html" />
+    <Content Include="triplets_events_per_day.aspx" />
+    <Content Include="Visualization_Duration.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="WebForm1.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="aaaaaaaaaa.aspx.cs">
+      <DependentUpon>aaaaaaaaaa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="aaaaaaaaaa.aspx.designer.cs">
+      <DependentUpon>aaaaaaaaaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Action\AustinHandler.cs" />
+    <Compile Include="Action\ChatHandler.ashx.cs">
+      <DependentUpon>ChatHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Action\TripletsCRUD.ashx.cs">
+      <DependentUpon>TripletsCRUD.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="ActivityNumberSelectable.aspx.cs">
+      <DependentUpon>ActivityNumberSelectable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ActivityNumberSelectable.aspx.designer.cs">
+      <DependentUpon>ActivityNumberSelectable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ActivityOverTime.aspx.cs">
+      <DependentUpon>ActivityOverTime.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ActivityOverTime.aspx.designer.cs">
+      <DependentUpon>ActivityOverTime.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Activity_Percentage.aspx.cs">
+      <DependentUpon>Activity_Percentage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Activity_Percentage.aspx.designer.cs">
+      <DependentUpon>Activity_Percentage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Delete.ashx.cs">
+      <DependentUpon>Delete.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="GetEventNumbers_TimeWindow.ashx.cs">
+      <DependentUpon>GetEventNumbers_TimeWindow.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="MainFormPage.ashx.cs">
+      <DependentUpon>MainFormPage.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Modify.ashx.cs">
+      <DependentUpon>Modify.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="PageHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="triplets.ashx.cs">
+      <DependentUpon>triplets.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="triplets_events_per_day.aspx.cs">
+      <DependentUpon>triplets_events_per_day.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="triplets_events_per_day.aspx.designer.cs">
+      <DependentUpon>triplets_events_per_day.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User.ashx.cs">
+      <DependentUpon>User.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="VerificationCode.ashx.cs">
+      <DependentUpon>VerificationCode.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Visualization_Duration.aspx.cs">
+      <DependentUpon>Visualization_Duration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Visualization_Duration.aspx.designer.cs">
+      <DependentUpon>Visualization_Duration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MainFormPage.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Delete.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Modify.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data_Layer\" />
+    <Folder Include="XML\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GetEventNumbers_TimeWindow.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{a87f5692-ea9c-4116-87a0-fb3927e31e7f}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{98DFD1DA-5BAD-4693-9430-824467975524}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataTimeTest\Common.csproj">
+      <Project>{b04484d8-0307-4110-a1ae-0f7db65fb0b1}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MODEL\MODEL.csproj">
+      <Project>{c6143e77-04f1-4d8d-bb29-b86cae9dfd95}</Project>
+      <Name>MODEL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="triplets.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TestOnly\resource\github_webfont.eot" />
+    <Content Include="TestOnly\resource\github_webfont.ttf" />
+    <Content Include="TestOnly\resource\github_webfont.woff" />
+    <Content Include="TestOnly\resource\github_webfont_ie.eot" />
+    <Content Include="TestOnly\resource\Thumbs.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CSS\images\Thumbs.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\.DS_Store" />
+    <Content Include="images\Thumbs.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="User.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="VerificationCode.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Action\TripletsCRUD.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Action\ChatHandler.ashx" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>8015</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="Javascript/jquery-2.1.3.min.js"></script>
+    <script src="Javascript/bootstrap.min.js"></script>
+    <link href="../CSS/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="../CSS/bootstrap.min.css" rel="stylesheet" />
+    <title></title>
+
+    
+    <script src="Javascript/msgBox.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            msg = new MsgBox({ imghref: "../images/" });
+            isValid = true;
+            $("#random").click(function () {
+                //希望每次都能换新的图片，但是浏览器有缓存解决办法：img.src=yzm.php?a=随即数
+                this.src = "VerificationCode.ashx?a=" + Math.random();
+            });
+            $("#btn_register").click(function () {
+                if (!validateInput()) return;
+
+                var res = $("#f1").serialize();//JSON数据
+                $.post("User.ashx?t=register", res, function (obj) {
+
+                    switch (obj.statu) {
+                        case "302":
+                            msg.showMsgOk(obj.msg, function () {
+                                window.location.href = obj.nextUrl;
+
+                            }());
+                            break;
+                        case "err":
+                            msg.showMsgErr(obj.msg);
+                            $("#random").click();
+                            break;
+                    }
+                }, "json");
+
+            });
+        });
+        function validateInput() {
+            if ($("#user_name").val() == "" || $("#user_name").val().length > 20) {
+                $("#user_name").focus();
+                msg.showMsgErr("用户名输入不能为空或者长度不能超过20");
+                isValid = false;
+            } else if ($("#login_name").val() == "" || $("#login_name").val().length > 20) {
+                msg.showMsgErr("登陆名不能为空或者长度不能超过20");
+                isValid = false;
+
+
+            } else if ($("#password_first").val() == "" || $("#password_first").val().length > 32) {
+                $("#password_first").focus();
+                msg.showMsgErr("密码不能为空或者长度不能超过32");
+                isValid = false;
+
+
+            }
+            else if ($("#password_first").val() != $("#password_repeat").val()) {
+
+                msg.showMsgErr("密码不一致");
+                isValid = false;
+
+
+            } else if ($("verification_code").val() == "") {
+                $("verification_code").focus();
+                msg.showMsgErr("验证码不能为空");
+                isValid = false;
+            }
+
+
+            return isValid;
+        }
+    </script>
+    <style>
+        html {
+            background: url(../images/Tapestry.jpg) no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+
+        body {
+            padding-top: 20px;
+            font-size: 16px;
+            font-family: "Open Sans",serif;
+            background: transparent;
+        }
+
+        .panel {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        .margin-base-vertical {
+            margin: 15px 0;
+        }
+
+        #tblist {
+            /*border: 1px solid #ffd800;*/
+            margin: 20px auto;
+            /*width: 400px;
+            border-collapse: collapse;*/
+        }
+
+        /*#tblist td {
+                border: 1px solid #ffd800;
+                margin: 20px;
+            }*/
+    </style>
+</head>
+<body class="templatemo-bg-image-1">
+    <div class="container panel ">
+        <form id="f1">
+            <table id="tblist">
+
+                <tr>
+
+
+                    <td><input class="form-control form-control input-lg margin-base-vertical" type="text" id="user_name" name="user_name" placeholder="用户名" /></td>
+                </tr>
+                <tr>
+                    <td><input class="form-control form-control input-lg margin-base-vertical" type="text" id="login_name" name="login_name_n" placeholder="登录名" /></td>
+                </tr>
+                <tr>
+
+                    <td><input class="form-control form-control input-lg margin-base-vertical" type="password" id="password_first" name="password_first" placeholder="密码" /></td>
+                </tr>
+                <tr>
+
+                    <td><input class="form-control form-control input-lg margin-base-vertical" type="password" id="password_repeat" name="password_repeat" placeholder="重复密码" /><img id="random" align="middle" src="VerificationCode.ashx" /></td>
+                </tr>
+                <tr>
+
+                    <td><input class="form-control form-control input-lg margin-base-vertical" type="text" id="verification_code" name="verification_code" placeholder="请输入图片的验证码" /></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align:center"><input class="btn btn-lg btn-primary btn-block" type="button" id="btn_register" value="注册" style="margin-right:50px" /> <a href="Login.html" target="_self">返回登陆</a></td>
+
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

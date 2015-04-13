@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Week8.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="Week8StoreContainer">
+    <EntitySet Name="EmbeddedSet" EntityType="Week8.Store.EmbeddedSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DurationSet" EntityType="Week8.Store.DurationSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Activity_CountSet" EntityType="Week8.Store.Activity_CountSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TripletsSet" EntityType="Week8.Store.TripletsSet" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="EmbeddedSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TimeStamp" Type="datetime" Nullable="false" />
+    <Property Name="Item1" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Item2" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DurationSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TimeStamp" Type="datetime" Nullable="false" />
+    <Property Name="Activity_id" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Activity_duration" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Activity_CountSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Activity_id" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Number" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TripletsSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TimeStamp" Type="datetime" Nullable="false" />
+    <Property Name="Subject" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Verb" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Object" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Week8" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="Week8Container" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="EmbeddedSet" EntityType="Week8.Embedded" />
+          <EntitySet Name="DurationSet" EntityType="Week8.Duration" />
+          <EntitySet Name="Activity_CountSet" EntityType="Week8.Activity_Count" />
+          <EntitySet Name="TripletsSet" EntityType="Week8.Triplets" />
+        </EntityContainer>
+        <EntityType Name="Embedded">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="TimeStamp" Nullable="false" />
+          <Property Type="String" Name="Item1" Nullable="false" />
+          <Property Type="String" Name="Item2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Duration">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="TimeStamp" Nullable="false" />
+          <Property Type="String" Name="Activity_id" Nullable="false" />
+          <Property Type="String" Name="Activity_duration" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Activity_Count">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Activity_id" Nullable="false" />
+          <Property Type="Int32" Name="Number" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Triplets">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="TimeStamp" Nullable="false" />
+          <Property Type="String" Name="Subject" Nullable="false" />
+          <Property Type="String" Name="Verb" Nullable="false" />
+          <Property Type="String" Name="Object" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Week8StoreContainer" CdmEntityContainer="Week8Container">
+    <EntitySetMapping Name="EmbeddedSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Week8.Embedded)">
+        <MappingFragment StoreEntitySet="EmbeddedSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Item1" ColumnName="Item1" />
+          <ScalarProperty Name="Item2" ColumnName="Item2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DurationSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Week8.Duration)">
+        <MappingFragment StoreEntitySet="DurationSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Activity_id" ColumnName="Activity_id" />
+          <ScalarProperty Name="Activity_duration" ColumnName="Activity_duration" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Activity_CountSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Week8.Activity_Count)">
+        <MappingFragment StoreEntitySet="Activity_CountSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Activity_id" ColumnName="Activity_id" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TripletsSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Week8.Triplets)">
+        <MappingFragment StoreEntitySet="TripletsSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Verb" ColumnName="Verb" />
+          <ScalarProperty Name="Object" ColumnName="Object" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="Week8" >
+        <EntityTypeShape EntityType="Week8.Embedded" Width="1.5" PointX="3.375" PointY="1.25" Height="1.7354337565104165" />
+        <EntityTypeShape EntityType="Week8.Duration" Width="1.5" PointX="6.875" PointY="2.5" Height="1.7354337565104165" />
+        <EntityTypeShape EntityType="Week8.Activity_Count" Width="1.5" PointX="1.875" PointY="3.75" Height="1.5506396484374996" />
+        <EntityTypeShape EntityType="Week8.Triplets" Width="1.5" PointX="4.5" PointY="4" Height="1.9202278645833326" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
